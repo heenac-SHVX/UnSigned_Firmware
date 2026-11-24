@@ -1,0 +1,23 @@
+name: Sign Firmware
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.bin'
+
+jobs:
+  sign:
+    if: github.event.head_commit.message == 'Unsigned Firmware'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Firmware Signing Action
+        uses: immutaverse/Firmware-Signing@1.0.0
+        with:
+          imt-token: ${{ secrets.IMT_TOKEN__ }}
+          sign-key: ${{ secrets.SIGN_KEY_ }}
