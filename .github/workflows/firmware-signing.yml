@@ -20,4 +20,4 @@ jobs:
         uses: immutaverse/Firmware-Signing@1.0.0
         with:
           imt-token: ${{ secrets.IMT_TOKEN__ }}
-          sign-key: ${{ secrets.SIGN_KEY_ }}
+          sign-key: ${{ secrets.SIGN_KEY }}
